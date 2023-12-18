@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="content">
+        <p>Введіть кількість сходинок:</p>
+        <input type="text" name="" class="numberSteps">
+        <p>Введіть будь-який символ</p>
+        <input type="text" name="" class="symbol">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick
+        function myClick() {
+            let symbol = document.querySelector(".symbol").value;
+            let numberSteps = document.querySelector(".numberSteps").value
+            // document.querySelector(".out").value
+            let output = ''
+
+            for (let i = 0; i < numberSteps; i++) {
+                let currentSymbols = symbol.repeat(i);
+                output += currentSymbols + '<br>';
+            }
+            document.querySelector(".out").innerHTML = output
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div  class="content" >
+        <p>Введіть перше число</p>
+        <input type="text" class="numberA">
+        <p>Введіть друге число</p>
+        <input type="text" class="numberB">
+        <p>Введіть третє число</p>
+        <input type="text" class="numberC">
+        <button class="button">Answer</button>
+        <div class="outlet"></div>
+    </div>
+    <script>
+
+        document.querySelector('.button').onclick = myClick
+        function myClick(){
+            let numberA = document.querySelector('.numberA').value
+            let numberB = document.querySelector('.numberB').value
+            let numberC = document.querySelector('.numberC').value
+            let ans 
+            let resul = (numberB * numberB) - (4* numberA * numberC)
+            document.querySelector(".outlet").innerHTML = resul
+            if (resul == 0) {
+            ans = "Дескрімінант " + resul+ " має 1 корінь";
+            let root1 = -numberB / (2 * numberA);
+            document.querySelector(".outlet").innerHTML =  ans + '<br>';
+            document.querySelector(".outlet").innerHTML += 'Корінь: ' + root1;
+        } else if (resul > 0) {
+            ans = "Дескрімінант " + resul+ " має 2 корені";
+            let root1 = (-numberB + Math.sqrt(resul)) / (2 * numberA);
+            let root2 = (-numberB - Math.sqrt(resul)) / (2 * numberA);
+            document.querySelector(".outlet").innerHTML =  ans + '<br>'
+            document.querySelector(".outlet").innerHTML += 'Перший корінь: ' + Math.round(root1)  + '<br>'
+            document.querySelector(".outlet").innerHTML += 'Другий корінь: ' + Math.round(root2)
+        } else {
+            ans = "Дескрімімант " + resul+ " не має коренів";
+            document.querySelector(".outlet").innerHTML =  ans ;
+          
+        }
+        }
+    </script>
+</body>
+
+</html>

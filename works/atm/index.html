@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="content">
+        <p>Яку суму хочете зняти</p>
+        <input class="money" type="text" name="" id="">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick 
+       
+
+        function myClick(){
+            let money = document.querySelector(".money").value;
+            document.querySelector(".out").innerHTML = money
+            let sum = 0
+            let commision = 0
+
+            if (money < 50 || money > 3000) {
+                document.querySelector(".out").innerHTML = 'На жаль, Ви можете зняти гроші на суму від 50 грн. до 3000 грн. та сума повинна бути кратною 50.'
+            } else if (money % 50 == 0) {
+                document.querySelector(".out").innerHTML = 'Заберіть ваші гроші у сумі ' + money + ' грн'
+            } else {
+                commision = money % 50
+                sum = money - commision
+                document.querySelector(".out").innerHTML = 'Заберіть ваші шроші у сумі ' + sum + ' грн моя комісія ' + commision 
+                
+            }
+        }
+
+            
+    </script>
+</body>
+</html>

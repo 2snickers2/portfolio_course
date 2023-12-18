@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="content">
+        <p>Сортування за алфавітом</p>
+        <div id="worldCapitalsAlph"></div>
+        <p>Сортуванння за кількістю наседення </p>
+        <div id="worldCapitalsNumber"></div>
+        <output></output>
+    </div>
+    <script>
+        let worldCapitals = {
+        'Київ': 2804000,
+        'Лондон': 8982000,
+        'Токіо': 13929286,
+        'Берлін': 3769495,
+        'Париж': 2140526,
+        }
+        
+        let worldCapitalsAlph = Object.keys(worldCapitals).sort()
+        let worldCapitalsNumber = Object.keys(worldCapitals).sort((a, b) => worldCapitals[a] - worldCapitals[b])
+
+    function displayCitiesAlph() {
+        let alphaDiv = document.getElementById('worldCapitalsAlph');
+        worldCapitalsAlph.forEach(city => {
+            alphaDiv.innerHTML += `<p>${city} : ${worldCapitals[city]}</p>`;
+        });
+    }
+    function displayCitiesNumber() {
+        let numberDiv = document.getElementById('worldCapitalsNumber');
+        worldCapitalsNumber.forEach(city => {
+            numberDiv.innerHTML += `<p>${city} : ${worldCapitals[city]}</p>`;
+        });
+    }
+    displayCitiesAlph();
+    displayCitiesNumber();
+    </script>
+</body>
+</html>

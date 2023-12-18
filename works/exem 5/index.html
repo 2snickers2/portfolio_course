@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+     <div class="content">
+        <p>Введіть мінімальне значення </p>
+    <input type="text" class="numberMin">
+    <p>Введіть максимальне значення </p>
+    <input type="text" class="numberMax">
+    <button class="click">Push</button>
+    <div class="result" style="display: none;">
+        <p class="message"></p>
+        <input type="text" class="randomResult">
+        <button class="clickResult">Push</button>
+    </div>
+    <div class="outlet"></div>
+</div>
+
+<script>
+    let hiddenNumber;
+    document.querySelector('.click').onclick = myClick;
+    document.querySelector('.clickResult').onclick = checkResult;
+    let count = 0;
+
+    function myClick() {
+        let numberMax = document.querySelector(".numberMax").value;
+        let numberMin = document.querySelector(".numberMin").value;
+        hiddenNumber = Math.floor(Math.random() * (numberMax - numberMin + 1) + parseInt(numberMin));
+        let message = "Спробуйте вгадати число в діапазоні від " + numberMin + " до " + numberMax;
+        document.querySelector(".message").innerHTML = message;
+        document.querySelector(".result").style.display = "block";
+        document.querySelector(".randomResult").placeholder = "Введіть ваш варіант";
+
+        count = 0;
+    }
+
+    function checkResult() {
+        let outlet = document.querySelector('.outlet');
+        let addNumberInput = document.querySelector(".randomResult");
+        let addNumber = parseInt(addNumberInput.value);
+
+        for (let i = 0; i <= 8; i++) {
+            count++
+            if (count > 8) {
+                outlet.innerHTML = "Кількість спроб вичерпано! Загадане число: " + hiddenNumber;
+                break;
+            } else if (addNumber === hiddenNumber) {
+                outlet.innerHTML = "Ви вгадали! Кількість спроб: " + count;
+                break;
+            } else {
+                document.querySelector(".outlet").innerHTML = "Спробуйте ще";
+                addNumberInput.value = "";
+                addNumberInput.placeholder = "Спробуйте ще раз";
+                break; // Зупинити цикл після показу повідомлення
+            }
+        }
+    }
+</script>
+
+    </script>
+</body>
+
+</html>

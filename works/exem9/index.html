@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="content">
+        <p>Скільки раз хочете ввести?</p>
+        <input type="text" class="number">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick
+        function myClick() {
+            let number = document.querySelector(".number").value
+            let compliments = ["cute", "clever", "smart", "kind", "generous", "polite", "educated", "honest", "brave", "friendly"];
+            let animals = ["fox", "frog", "wolf", "dog", "cat", "kangaroo", "rabbit", "elephant", "crocodile", "lion", "monkey", "tiger", "lynx", "bear", "cheetah"];
+            let colors = ["red", "blue", "green", "purple", "orange", "brown", "pink", "gray", "cyan", "black", "Burgundy ", "Auburn ", "Scarlet ", "Ruby", "Ruby ", "Saffron "];
+            let out = ""
+            for (let i = 1; i <= number; i++) {
+                let rand1 = Math.floor(Math.random() * compliments.length);
+                let rand2 = Math.floor(Math.random() * animals.length);
+                let randColor = colors[Math.floor(Math.random() * colors.length)]
+                out += (" <p style='color:" + randColor + "'>" + i + ")" + "you're so " + compliments[rand1] + " as " + animals[rand2] + "<br>" + "</p>")
+            }
+            document.querySelector(".out").innerHTML = out
+        }
+    </script>
+</body>
+
+</html>

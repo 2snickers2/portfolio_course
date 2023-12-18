@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="content">
+        Введіть свій вік
+        <input type="text" class="years">
+        <button >Push</button>
+        <div class="outlet"> </div>
+    </div>
+
+    <script>
+        document.querySelector("button").onclick = myClick ;
+        function myClick(){
+       
+        document.querySelector(".outlet").value;
+        let years = document.querySelector(".years").value;
+        let ageText
+
+       
+        document.querySelector(".outlet").innerHTML = "Ваш вік " + years + ageText;
+        if (years % 10 == 1 && years % 100 != 11) {
+            ageText = 'рік';
+        } else if (years % 10 >= 2 && years % 10 <= 4 && (years % 100 < 10 || years % 100 >= 20)) {
+            ageText = 'роки';
+        } else {
+            ageText = 'років';
+        }
+
+        if (years >= 18 && years <= 100) {
+            document.querySelector(".outlet").innerHTML = 'Вам ' + years + ' ' + ageText + ' і прохід дозволено'
+        } else {
+            document.querySelector(".outlet").innerHTML = 'Вам ' + years + ' ' + ageText + ' і прохід не дозволено'
+        }
+        }
+    </script>
+</body>
+</html>

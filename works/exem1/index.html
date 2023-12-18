@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div align="center" class="content">
+        <div class="tableStyle">
+            <p>Таблиця множення</p>
+            <input type="number" class="value" placeholder="Введіть число">
+            <button>Push</button>
+            <div class="out"></div>
+        </div>
+    </div>
+
+    <script>
+
+        document.querySelector("button").onclick = myClick
+        function myClick() {
+            let num = document.querySelector(".value").value
+            let table = ''
+
+            for (i = 1; i <= 10; i++) {
+                let res = num + '×' + i + "=" + num * i + "<br>"
+                table += res
+                // document.write(num + '*' + i + "=" + num*i + "<br>")
+            }
+
+            document.querySelector(".out").innerHTML = table
+        }
+
+    </script>
+    </script>
+</body>
+</html>

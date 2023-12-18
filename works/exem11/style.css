@@ -1,0 +1,5 @@
+#train {
+    position: relative; /* Додайте це для визначення позиції елемента */
+    width: 50%;
+    height: 50%;
+}

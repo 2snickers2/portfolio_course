@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="content">
+        <p>Введіть число і дізнаєтесь, яка літера українського алфавіту під цим номером</p>
+        <input type="text" class="number">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick 
+        function myClick(){
+        let number = document.querySelector(".number").value
+         function alphabet(array, value){
+            for (let i = 0; i < array.length; i++){
+                if (i + 1 === Number(value)) return array[i];
+            }
+           return -1;
+         }
+
+         let arr = ['а','б','в','г','ґ','д','е','є','ж','з','и','і','ї','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ь','ю','я'];
+         document.querySelector(".out").innerHTML += ("Під номером " + number + " знаходиться літера " + alphabet(arr, number));  
+        } 
+    
+     </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="content">
+        <p>Яку оцінку ви отримали сьогодні</p>
+    <input type="text" class="value">
+    <button>Push</button>
+    <div class="out"></div>
+    </div>
+
+    <script>
+        document.querySelector("button").onclick = myCklick
+        function myCklick(){
+            let value = document.querySelector(".value").value
+            let assessment = value
+  switch(true){
+     case (assessment >= 1 && assessment <=3):
+        document.querySelector(".out").innerHTML = 'Це низька оцінка'
+        break;
+     case (assessment >= 4 && assessment <=6):
+        document.querySelector(".out").innerHTML = 'Це вже краще, середній рівень'
+        break;
+     case (assessment >= 7 && assessment <=9):
+        document.querySelector(".out").innerHTML = 'Молодець, достатній рівень'
+        break;
+    case (assessment >= 10 && assessment <=12):
+        document.querySelector(".out").innerHTML = 'Супер, це високий рівень'
+        break;
+    default: 
+        document.querySelector(".out").innerHTML = 'Такої оцінки не існує'
+        break;
+     }
+
+    }
+  
+
+    </script>
+</body>
+</html>
