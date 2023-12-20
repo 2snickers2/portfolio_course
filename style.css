@@ -305,7 +305,7 @@ span{
     transition: all 1s;
     }
     .element{
-        width: 260px;
+        width: 100%;
         z-index: 1;
         background-color: rgba(53, 53, 53, 0.421);
     }
