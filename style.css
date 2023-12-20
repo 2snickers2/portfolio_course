@@ -341,6 +341,7 @@ span{
     }
     .mobile_draco {
         display: block;
+        right: 0;
         position: absolute;
         bottom: 10px; 
     }
