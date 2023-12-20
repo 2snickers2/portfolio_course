@@ -1,31 +1,35 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
+#snitch {
+    position: relative;
+    width: 200px;
+    height: 50%;
+}
 *{
-    margin: 0 ;
+    margin: 0;
     padding: 0;
 }
 body{
-    background: #000000;
+    background-color: #000;
     font-family: 'Montserrat', sans-serif;
 }
-
 a{
     text-decoration: none;
     color: white;
 
 }
-
-.content{
-    padding: 10px 0;
-    background-color: #304D30;
-    border-radius: 20px;
+.arrows {
+    width: 19%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
+    justify-content: space-between;
     margin: 0 auto;
-    margin-top: 50px;
-    width: 20%;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.arrows i {
+    color: #304D30;
 }
 .header_style{
     margin:  0 10% 0 25% ;
@@ -56,8 +60,7 @@ header{
     height: 50px;
 }
 .logo_slytherin{
-  margin: 0 auto;
-  
+     margin: 0 auto;
 }
 .name{
     margin: 0;
@@ -67,12 +70,12 @@ header{
 }
 .menu_item{
     margin-right: 15px;
-   
 }
 .menu_item ul li{
     list-style: none;
     display: block;
     float: left;
+    margin-left: 20px;
     padding: 10px;
 
 }
@@ -203,7 +206,7 @@ input{
         margin: 0 auto;
         }
         .header_style{
-            margin: 0;
+            padding: 0;
         }
         .logo_slytherin img{
             margin-right: 50px;
@@ -240,6 +243,3 @@ input{
             transition: all 1s;
         }
 }
-canvas {
-    border: 1px solid #000;
-  }

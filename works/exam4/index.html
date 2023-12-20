@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        Введіть свій вік
+        <input type="text" class="years">
+        <button >Push</button>
+        <div class="outlet"> </div>
+    </div>
+    <div class="arrows">
+        <a href="../exam3/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam5/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick ;
+        function myClick(){
+       
+        document.querySelector(".outlet").value;
+        let years = document.querySelector(".years").value;
+        let ageText
+
+       
+        document.querySelector(".outlet").innerHTML = "Ваш вік " + years + ageText;
+        if (years % 10 == 1 && years % 100 != 11) {
+            ageText = 'рік';
+        } else if (years % 10 >= 2 && years % 10 <= 4 && (years % 100 < 10 || years % 100 >= 20)) {
+            ageText = 'роки';
+        } else {
+            ageText = 'років';
+        }
+
+        if (years >= 18 && years <= 100) {
+            document.querySelector(".outlet").innerHTML = 'Вам ' + years + ' ' + ageText + ' і прохід дозволено'
+        } else {
+            document.querySelector(".outlet").innerHTML = 'Вам ' + years + ' ' + ageText + ' і прохід не дозволено'
+        }
+        }
+    </script>
+</body>
+</html>

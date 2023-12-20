@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div  class="content" >
+        <p>Введіть перше число</p>
+        <input type="text" class="numberA">
+        <p>Введіть друге число</p>
+        <input type="text" class="numberB">
+        <p>Введіть третє число</p>
+        <input type="text" class="numberC">
+        <button class="button">Answer</button>
+        <div class="outlet"></div>
+    </div>
+    <div class="arrows">
+        <a href="../exam2/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam4/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+
+        document.querySelector('.button').onclick = myClick
+        function myClick(){
+            let numberA = document.querySelector('.numberA').value
+            let numberB = document.querySelector('.numberB').value
+            let numberC = document.querySelector('.numberC').value
+            let ans 
+            let resul = (numberB * numberB) - (4* numberA * numberC)
+            document.querySelector(".outlet").innerHTML = resul
+            if (resul == 0) {
+            ans = "Дескрімінант " + resul+ " має 1 корінь";
+            let root1 = -numberB / (2 * numberA);
+            document.querySelector(".outlet").innerHTML =  ans + '<br>';
+            document.querySelector(".outlet").innerHTML += 'Корінь: ' + root1;
+        } else if (resul > 0) {
+            ans = "Дескрімінант " + resul+ " має 2 корені";
+            let root1 = (-numberB + Math.sqrt(resul)) / (2 * numberA);
+            let root2 = (-numberB - Math.sqrt(resul)) / (2 * numberA);
+            document.querySelector(".outlet").innerHTML =  ans + '<br>'
+            document.querySelector(".outlet").innerHTML += 'Перший корінь: ' + Math.round(root1)  + '<br>'
+            document.querySelector(".outlet").innerHTML += 'Другий корінь: ' + Math.round(root2)
+        } else {
+            ans = "Дескрімімант " + resul+ " не має коренів";
+            document.querySelector(".outlet").innerHTML =  ans ;
+          
+        }
+        }
+    </script>
+</body>
+
+</html>

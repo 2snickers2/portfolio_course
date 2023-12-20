@@ -1,3 +1,35 @@
+.mainBlock{
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 400px;
+    width: 400px;
+    width: 0 auto;
+    border:  1px solid black;
+}
+.block{
+
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.black{
+    background: #091809;
+}
+.white{
+    background: #fff;
+}
+.arrows {
+    width: 19%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.arrows i {
+    color: #304D30;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 *{
@@ -197,6 +229,14 @@ input{
         width: 100%;
         padding: 10px 0;
     }
+    .mainBlock{
+        width: 200px;
+        height: 200px;
+    }
+    .block{
+        width: 25px;
+        height: 25px;
+    }
     header{
         width: 100%;
         position: relative;
@@ -240,6 +280,3 @@ input{
             transition: all 1s;
         }
 }
-canvas {
-    border: 1px solid #000;
-  }

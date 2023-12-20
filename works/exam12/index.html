@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+<body>
+       <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <img id="snitch" src="../../photo/snitch.png" alt="">
+    <div class="arrows">
+        <a href="../exam11/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam13/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        snitch.onclick = function(){
+            let start = Date.now()
+            let opts = {
+                duration: 3000
+            }
+   
+            let timer = setInterval(function(){
+              
+                let timePassed = Date.now() - start;
+                snitch.style.left = timePassed/5 + 'px';
+                if(timePassed >3000)
+                clearInterval(timer);
+            },20)
+        }
+    </script>
+</body>
+</html>

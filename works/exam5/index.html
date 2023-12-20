@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <p>Введіть кількість сходинок:</p>
+        <input type="text" name="" class="numberSteps">
+        <p>Введіть будь-який символ</p>
+        <input type="text" name="" class="symbol">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+    <div class="arrows">
+        <a href="../exam4/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam6/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick
+        function myClick() {
+            let symbol = document.querySelector(".symbol").value;
+            let numberSteps = document.querySelector(".numberSteps").value
+            // document.querySelector(".out").value
+            let output = ''
+
+            for (let i = 0; i < numberSteps; i++) {
+                let currentSymbols = symbol.repeat(i);
+                output += currentSymbols + '<br>';
+            }
+            document.querySelector(".out").innerHTML = output
+        }
+
+
+    </script>
+</body>
+
+</html>

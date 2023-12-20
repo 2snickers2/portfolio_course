@@ -65,9 +65,5 @@ document.addEventListener('DOMContentLoaded', function(){
    });
 console.log("Hello world")
 
-document.querySelector('.burger').addEventListener('click', function () {
-    this.classList.toggle('active');
-    document.querySelector('.menu_item').classList.toggle('open');
-});
 
 

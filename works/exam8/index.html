@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <p>Яку оцінку ви отримали сьогодні</p>
+    <input type="text" class="value">
+    <button>Push</button>
+    <div class="out"></div>
+    </div>
+    <div class="arrows">
+        <a href="../exam7/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam10/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myCklick
+        function myCklick(){
+            let value = document.querySelector(".value").value
+            let assessment = value
+  switch(true){
+     case (assessment >= 1 && assessment <=3):
+        document.querySelector(".out").innerHTML = 'Це низька оцінка'
+        break;
+     case (assessment >= 4 && assessment <=6):
+        document.querySelector(".out").innerHTML = 'Це вже краще, середній рівень'
+        break;
+     case (assessment >= 7 && assessment <=9):
+        document.querySelector(".out").innerHTML = 'Молодець, достатній рівень'
+        break;
+    case (assessment >= 10 && assessment <=12):
+        document.querySelector(".out").innerHTML = 'Супер, це високий рівень'
+        break;
+    default: 
+        document.querySelector(".out").innerHTML = 'Такої оцінки не існує'
+        break;
+     }
+
+    }
+  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangles</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+  <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+  <p>Введіть кількість трикутників:</p>
+  <input type="number" id="triangleCount" min="1" value="5">
+  <button onclick="generateTriangles()">Push</button>
+  <br>
+
+  <canvas id="myCanvas"></canvas>
+</div>
+<div class="arrows">
+    <a href="../exam13/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="../exam15/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+  <script>
+    function drawCircle(ctx, canvasWidth, canvasHeight) {
+      let x = Math.random() * canvasWidth;
+      let y = Math.random() * canvasHeight;
+      let radius = Math.random() * 25 + 10; // Випадковий радіус кола
+      let color = getRandomColor();
+
+      // Малюємо коло
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function getRandomColor() {
+      return '#' + (Math.random() * 0xFFFFFF << 0).toString(16); // Випадковий колір
+    }
+  </script>
+</body>
+</html>

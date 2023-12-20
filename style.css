@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -15,11 +15,12 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-color: #000000;
     
+    
 }
 .contanier{
     width: 100%;
     height: 100%;
-    
+    position: relative;
  
 }
 .header_style{
@@ -57,7 +58,7 @@ header{
 .logo_slytherin img {
     width: 50px;
     height: 50px;
-   margin-left: 150%;
+   margin-left:200%;
 }
 .name{
     margin: 0;
@@ -86,9 +87,11 @@ header{
     display: flex !important;
 }
 span{
-    color: rgba(255, 0, 0, 0.626);
-    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 20px;
 }
+
 .burger {
     display: none;
     position: relative;
@@ -169,6 +172,7 @@ span{
     text-align: center;
     font-weight: 500;
     margin-top: 10px;
+    color: rgb(189, 189, 189);
 }
 .element_btn{
     width: 50%;
@@ -264,7 +268,9 @@ span{
     top: 0;
     border-radius: 10px;
 }
-
+.mobile_draco{
+    display: none;
+}
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
@@ -291,7 +297,8 @@ span{
         padding: 0;
     }
     .logo_slytherin img{
-        margin: 0;
+        margin-left: 0;
+        margin-right: 50px;
     }
     .burger{
         display: flex;
@@ -299,6 +306,12 @@ span{
     }
     .element{
         width: 260px;
+        z-index: 1;
+        background-color: rgba(53, 53, 53, 0.421);
+    }
+    .snitch img {
+        width: 100px;
+        position: absolute;
     }
     .menu_item{
         height: 50%;
@@ -326,5 +339,18 @@ span{
     .hogwarts{
         display: none;
     }
+    .mobile_draco {
+        display: block;
+        position: absolute;
+        bottom: 10px; 
+    }
+    
+    .mobile_draco img {
+        width: 320px;
+        object-fit: cover;
+        background-color: #0000006a;
+    }
+    
 }
+
 

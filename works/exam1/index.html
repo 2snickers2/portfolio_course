@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="" href="">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <p>Яку суму хочете зняти</p>
+        <input class="money" type="text" name="" id="">
+        <button>Push</button>
+        <div class="out"></div>
+    </div>
+
+    <div class="arrows">
+        <a href=""></a>
+        <a href="../exam2/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    
+    <script>
+        document.querySelector("button").onclick = myClick 
+       
+
+        function myClick(){
+            let money = document.querySelector(".money").value;
+            document.querySelector(".out").innerHTML = money
+            let sum = 0
+            let commision = 0
+
+            if (money < 50 || money > 3000) {
+                document.querySelector(".out").innerHTML = 'На жаль, Ви можете зняти гроші на суму від 50 грн. до 3000 грн. та сума повинна бути кратною 50.'
+            } else if (money % 50 == 0) {
+                document.querySelector(".out").innerHTML = 'Заберіть ваші гроші у сумі ' + money + ' грн'
+            } else {
+                commision = money % 50
+                sum = money - commision
+                document.querySelector(".out").innerHTML = 'Заберіть ваші шроші у сумі ' + sum + ' грн моя комісія ' + commision 
+                
+            }
+        }
+
+            
+    </script>
+</body>
+</html>

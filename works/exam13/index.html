@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <div class="mainBlock"></div>
+    <div class="arrows">
+        <a href="../exam12/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../exam14/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        function drawChess(){
+            let mainBlock = document.querySelector('.mainBlock')
+            let block
+            let flag = true
+            for (let i =0; i<8; i++){
+                for (let j =0; j<8; j++){
+                    if(j==0) flag = !flag
+                    block = document.createElement('div')
+                    if(flag){
+                        block.className = 'block black'
+                    }else{
+                        block.className = 'block white'
+                    }
+                    mainBlock.appendChild(block)
+                    flag = !flag
+                }
+            }
+        }
+        drawChess()
+    </script>
+</body>
+</html>

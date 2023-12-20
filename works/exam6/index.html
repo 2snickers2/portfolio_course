@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="../burger.menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="../../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                <p class="name">Xenia</p>
+            </div>
+            <div class="logo_slytherin">
+                <img src="../../photo/Slytherin_ClearBG.png" alt="">
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="../../index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/xeniakk3" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> telegram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+     <div class="content">
+        <p>Введіть мінімальне значення </p>
+    <input type="text" class="numberMin">
+    <p>Введіть максимальне значення </p>
+    <input type="text" class="numberMax">
+    <button class="click">Push</button>
+    <div class="result" style="display: none;">
+        <p class="message"></p>
+        <input type="text" class="randomResult">
+        <button class="clickResult">Push</button>
+    </div>
+    <div class="outlet"></div>
+</div>
+<div class="arrows">
+    <a href="../exam5/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="../exam7/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+
+<script>
+    let hiddenNumber;
+    document.querySelector('.click').onclick = myClick;
+    document.querySelector('.clickResult').onclick = checkResult;
+    let count = 0;
+
+    function myClick() {
+        let numberMax = document.querySelector(".numberMax").value;
+        let numberMin = document.querySelector(".numberMin").value;
+        hiddenNumber = Math.floor(Math.random() * (numberMax - numberMin + 1) + parseInt(numberMin));
+        let message = "Спробуйте вгадати число в діапазоні від " + numberMin + " до " + numberMax;
+        document.querySelector(".message").innerHTML = message;
+        document.querySelector(".result").style.display = "block";
+        document.querySelector(".randomResult").placeholder = "Введіть ваш варіант";
+
+        count = 0;
+    }
+
+    function checkResult() {
+        let outlet = document.querySelector('.outlet');
+        let addNumberInput = document.querySelector(".randomResult");
+        let addNumber = parseInt(addNumberInput.value);
+
+        for (let i = 0; i <= 8; i++) {
+            count++
+            if (count > 8) {
+                outlet.innerHTML = "Кількість спроб вичерпано! Загадане число: " + hiddenNumber;
+                break;
+            } else if (addNumber === hiddenNumber) {
+                outlet.innerHTML = "Ви вгадали! Кількість спроб: " + count;
+                break;
+            } else {
+                document.querySelector(".outlet").innerHTML = "Спробуйте ще";
+                addNumberInput.value = "";
+                addNumberInput.placeholder = "Спробуйте ще раз";
+                break; // Зупинити цикл після показу повідомлення
+            }
+        }
+    }
+</script>
+
+    </script>
+</body>
+
+</html>
