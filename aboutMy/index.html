@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="photo/Slytherin_ClearBG.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>Портфоліо</title>
+</head>
+
+<body>
+    <div class="contanier">
+        <header>
+            <div id="snow"></div>
+            <div class="header_style">
+                <div class="logo">
+                    <img src="../photo/photo_2023-08-16_23-42-12.jpg" class="ava">
+                    <p class="name">Xenia</p>
+                </div>
+                <div class="logo_slytherin">
+                    <img src="../photo/Slytherin_ClearBG.png" alt="">
+                </div>
+                <div class="menu_item">
+                    <ul>
+                        <li>
+                            <a href="../index.html" target="_blank">
+                                <i class="fa-solid fa-house"></i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/ks.susha_?igshid=ZDdkNTZiNTM=" target="_blank">
+                                <i class="fa-brands fa-instagram"></i> instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/xeniakk3" target="_blank">
+                                <i class="fa-brands fa-telegram"></i> telegram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <div class="information">
+            <div id="gallery">
+                <img id="current-photo" src="" alt="Current Photo">
+                <div id="button">
+                <button id="prev-button"><i class="fa-solid fa-arrow-left"></i> </button>
+                <button id="next-button"> <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            </div>
+            <div class="my_inform">
+                <p>Всім, привіт, мене звуть <span>Ксенія</span>, мені 16 років, я проживаю в Києві. Вже 3-й рік я навчаюсь в сфері IT, раніше проходила курси, вивчала: <span>HTML CSS</span> і частково <span>JS</span>. На цьому курсі я покращила свої знання і багато чому навчилась. Своє життя я хочу зв'язати саме с програмуванням, а зараз я роблю все, щоб вдосконатилити свої навички.</p>
+                <br>
+                <p>Я не тільки пишу код, також вивчаю англійську, багато займаюсь в колледжі, навчаюсь на відмінно. Я люблю читати, фотографувати, та робити поробки своїми руками, вивчаю сферу психології, а ще пишу вірші, їх ви можете переглянути на моєму  <a href="https://2snickers2.github.io/my.poetry" target="_blank" rel="noopener noreferrer">сайті</a>. Мені подобоється експериментувати з кодом та дизайном сторінок на сайті.</p>
+                <br>
+                    <p>Коли я пишу код зазвичай слухаю музику, яка мене надихає, в мене є фаворити: Eminem, Linkin Park, Bring Me The Horizon, Rammstein, Limp Bizkit. Ще є улюблені франшизи такі як "Harry Potter", "Mission Impossible", "John Wick", "Matrix". А також в мене є дуже крутий кіт, якого я обожнюю.</p>
+                <br>
+                <p>Напевно, це преше, що приходить на думку, коли просять, розповісти про себе. Дякую всім, хто виділив час для огляду мого сайту!! </p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+    const photos = [
+        'photo_2023-08-15_23-00-11.jpg',
+        'photo_2023-11-05_19-06-21.jpg',
+        'photo_2023-12-07_22-12-01.jpg',
+        'photo_2023-10-30_21-31-56.jpg',
+        'photo_2023-09-02_22-38-31.jpg',
+        'photo_2021-07-31_13-08-51.jpg'
+    ];
+
+    let currentPhotoIndex = 0;
+    const currentPhoto = document.getElementById('current-photo');
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+
+    function updatePhoto() {
+        currentPhoto.src = photos[currentPhotoIndex];
+    }
+    prevButton.addEventListener('click', function () {
+        currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+        updatePhoto();
+    });
+    nextButton.addEventListener('click', function () {
+        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+        updatePhoto();
+    });
+    updatePhoto();
+});
+
+        </script>
+    </body>
+    </html>

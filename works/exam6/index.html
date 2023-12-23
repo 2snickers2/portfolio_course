@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Робота№6</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="../style.css">
     <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
@@ -46,6 +46,7 @@
             </div>
         </div>
     </header>
+    <p class="main_name">Введіть значення і вгадайте число в цьому діапазоні</p>
      <div class="content">
         <p>Введіть мінімальне значення </p>
     <input type="text" class="numberMin">
@@ -83,29 +84,25 @@
     }
 
     function checkResult() {
-        let outlet = document.querySelector('.outlet');
-        let addNumberInput = document.querySelector(".randomResult");
-        let addNumber = parseInt(addNumberInput.value);
-
-        for (let i = 0; i <= 8; i++) {
-            count++
-            if (count > 8) {
-                outlet.innerHTML = "Кількість спроб вичерпано! Загадане число: " + hiddenNumber;
-                break;
-            } else if (addNumber === hiddenNumber) {
-                outlet.innerHTML = "Ви вгадали! Кількість спроб: " + count;
-                break;
-            } else {
-                document.querySelector(".outlet").innerHTML = "Спробуйте ще";
-                addNumberInput.value = "";
-                addNumberInput.placeholder = "Спробуйте ще раз";
-                break; // Зупинити цикл після показу повідомлення
-            }
-        }
+    let outlet = document.querySelector('.outlet');
+    let addNumberInput = document.querySelector(".randomResult");
+    let addNumber = parseInt(addNumberInput.value);
+    count++
+    if (addNumber < hiddenNumber) {
+        outlet.innerHTML = "Загадане число більше. Спробуйте ще раз.";
+        console.log("Загадане число більше.");
+    } else if (addNumber > hiddenNumber) {
+        outlet.innerHTML = "Загадане число менше. Спробуйте ще раз.";
+        console.log("Загадане число менше.");
+    } else {
+        outlet.innerHTML = "Ви вгадали! Кількість спроб: " + count;
+        console.log("Ви вгадали!");
+        return; 
     }
+}
+
 </script>
 
-    </script>
 </body>
 
 </html>

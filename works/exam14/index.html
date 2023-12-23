@@ -43,6 +43,7 @@
             </div>
         </div>
     </header>
+    <p class="main_name">Введіть скільки тоикутників ви хочете побачити</p>
     <div class="content">
   <p>Введіть кількість трикутників:</p>
   <input type="number" id="triangleCount" min="1" value="5">
@@ -56,22 +57,45 @@
     <a href="../exam15/index.html"><i class="fa-solid fa-arrow-right"></i></a>
 </div>
   <script>
-    function drawCircle(ctx, canvasWidth, canvasHeight) {
-      let x = Math.random() * canvasWidth;
-      let y = Math.random() * canvasHeight;
-      let radius = Math.random() * 25 + 10; // Випадковий радіус кола
-      let color = getRandomColor();
 
-      // Малюємо коло
-      ctx.beginPath();
-      ctx.arc(x, y, radius, 0, 2 * Math.PI);
-      ctx.fillStyle = color;
-      ctx.fill();
-    }
+  function generateTriangles() {
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
 
-    function getRandomColor() {
-      return '#' + (Math.random() * 0xFFFFFF << 0).toString(16); // Випадковий колір
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let triangleCount = document.getElementById("triangleCount").value;
+
+    for (let i = 0; i < triangleCount; i++) {
+      drawTriangle(ctx, canvas.width, canvas.height);
     }
-  </script>
+  }
+
+  function drawTriangle(ctx, canvasWidth, canvasHeight) {
+    let x1 = Math.random() * canvasWidth;
+    let y1 = Math.random() * canvasHeight;
+    let x2 = Math.random() * canvasWidth;
+    let y2 = Math.random() * canvasHeight;
+    let x3 = Math.random() * canvasWidth;
+    let y3 = Math.random() * canvasHeight;
+
+    let color = getRandomColor();
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x3, y3);
+    ctx.closePath();
+
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  function getRandomColor() {
+    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+  }
+</script>
+
 </body>
 </html>

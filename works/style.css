@@ -24,7 +24,7 @@ a{
     align-items: center;
     color: #fff;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
     width: 20%;
 }
 .header_style{
@@ -179,6 +179,15 @@ input:focus{
 }
 button:hover{
     background-color: #09180f;
+}
+.main_name{
+    
+    color: #fff;
+    margin: 0 auto;
+    font-size: 17px;
+    padding: 15px; 
+    font-weight: 500;
+    text-align: center;
 }
 input{
     
