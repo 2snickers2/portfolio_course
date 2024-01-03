@@ -251,4 +251,12 @@ input{
             margin-right: 170px;
             transition: all 1s;
         }
+        .arrows{
+            width: 80%;
+        }
+        .home i{
+            display: block;
+            font-size: 17px;
+            margin-left: 13px;
+        }
 }

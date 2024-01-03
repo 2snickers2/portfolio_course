@@ -95,7 +95,7 @@ header{
 }
 .about_my a:hover{
     color: #000000;
-    font-weight: 600;
+    font-weight: 100;
 }
 .open {
     display: flex !important;
@@ -390,13 +390,10 @@ span{
         left: 140px;
         position: absolute;
         bottom: 0px;
-        
     }
     .mobile_dobbi img{
         width: 150px;
-        
     }
-    
 }
 
 

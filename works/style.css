@@ -199,6 +199,9 @@ input{
     font-family: 'Montserrat', sans-serif;
     
 }
+.home i{
+    display: none;
+}
 @media (max-width: 550px ){
     .content{
         margin: 0;
@@ -247,6 +250,14 @@ input{
             row-gap: 30px;
             margin-right: 170px;
             transition: all 1s;
+        }
+        .arrows{
+            width: 80%;
+        }
+        .home i{
+            display: block;
+            font-size: 17px;
+            margin-left: 13px;
         }
 }
 canvas {
